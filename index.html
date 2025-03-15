@@ -3,39 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+
     <div class="calculator">
-        
-        <input type="text" id="display" disabled>
+        <!-- Contenedor principal de la calculadora -->
+
+        <!-- e muestran los números ingresados y los resultados -->
+
+        <input type="text" id="display" disabled="">  
+        <output id="display"></output>      
+
         <div class="buttons"> 
             <!-- Contenedor que agrupa todos los botones de la calculadora -->
 
-            <!-- Fila 1: Números 7, 8, 9 y botón de suma -->
+            <!-- Fila 1 -->
+            <button class="btn operator" onclick="clearDisplay()">C</button>
+            <button class="btn operator" onclick="calculateSquareRoot()">√</button>
+            <button class="btn operator" onclick="setOperation('^')">^</button>
+            <button class="btn operator" onclick="togglePower()">⏻</button>
+
+            <!-- Fila 2 -->
+            <button class="btn operator" onclick="squareNumber()">x²</button>
+            <button class="btn operator" onclick="addParentheses()">()</button>
+            <button class="btn operator" onclick="calculatePercentage()">%</button>
+            <button class="btn operator" onclick="setOperation('/')">/</button>
+
+            <!-- Fila 3 -->
             <button class="btn" onclick="appendNumber(7)">7</button>
             <button class="btn" onclick="appendNumber(8)">8</button>
             <button class="btn" onclick="appendNumber(9)">9</button>
-            <button class="btn" onclick="setOperation('+')">+</button>
+            <button class="btn operator" onclick="setOperation('*')">*</button>
 
-            <!-- Fila 2: Números 4, 5, 6 y botón de resta -->
+            <!-- Fila 4  -->
             <button class="btn" onclick="appendNumber(4)">4</button>
             <button class="btn" onclick="appendNumber(5)">5</button>
             <button class="btn" onclick="appendNumber(6)">6</button>
-            <button class="btn" onclick="setOperation('-')">-</button>
+            <button class="btn operator" onclick="setOperation('-')">-</button>
 
-            <!-- Fila 1: Números 1,2,3 y botón de mulplicación -->
+            <!-- Fila 5 -->
             <button class="btn" onclick="appendNumber(1)">1</button>
             <button class="btn" onclick="appendNumber(2)">2</button>
             <button class="btn" onclick="appendNumber(3)">3</button>
-            <button class="btn" onclick="setOperation('*')">*</button>
+            <button class="btn operator" onclick="setOperation('+')">+</button>
 
-            <!-- Fila 1: Número 0 y botones de C, igual  y división -->
+            <!-- Fila 6 -->
             <button class="btn" onclick="appendNumber(0)">0</button>
-            <button class="btn" onclick="clearDisplay()">C</button>
-            <button class="btn" onclick="calculateResult()">=</button>
-            <button class="btn" onclick="setOperation('/')">/</button>
+            <button class="btn" onclick="appendDecimal()">.</button>
+            <button class="btn" onclick="deleteLast()">←</button>
+            <button class="btn operator" onclick="calculateResult()">=</button>
+            
         </div>
     </div>
 
